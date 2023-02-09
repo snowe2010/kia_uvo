@@ -1,0 +1,17 @@
+version: 1
+disable_existing_loggers: False
+
+formatters:
+  simple:
+    format: 'WEird formatter %(asctime)s  %(name)-30s %(levelname)-7s %(message)s'
+
+handlers:
+  file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: simple
+    filename: /var/log/myapp/myapp.log
+
+root:
+  level: DEBUG
+  handlers:
+    - file
